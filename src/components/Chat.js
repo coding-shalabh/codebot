@@ -50,7 +50,7 @@ You can start by asking your coding question or providing a code snippet for Cod
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + process.env.REACT_APP_OPEN_AI,
+          'Authorization': apikey,
         },
         body: JSON.stringify(payload), // Send user's message to OpenAI API
       });
