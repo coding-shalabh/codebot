@@ -45,7 +45,6 @@ You can start by asking your coding question or providing a code snippet for Cod
     };
     
     try {
-      console.log(apikey);
       const response = await fetch('https://api.openai.com/v1/engines/text-davinci-002/completions', {
         method: 'POST',
         headers: {
