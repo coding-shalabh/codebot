@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
 
-const apikey = `Bearer ${process.env.REACT_APP_OPEN_AI}`;
+// const apikey = `Bearer ${process.env.REACT_APP_OPEN_AI}`;
 
 
 const Chat = () => {
@@ -49,7 +49,7 @@ You can start by asking your coding question or providing a code snippet for Cod
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': apikey,
+          'Authorization': `Bearer ${process.env.REACT_APP_OPEN_AI}`,
         },
         body: JSON.stringify(payload), // Send user's message to OpenAI API
       });
