@@ -45,6 +45,7 @@ You can start by asking your coding question or providing a code snippet for Cod
     };
     
     try {
+      console.log(apikey);
       const response = await fetch('https://api.openai.com/v1/engines/text-davinci-002/completions', {
         method: 'POST',
         headers: {
@@ -54,7 +55,6 @@ You can start by asking your coding question or providing a code snippet for Cod
         body: JSON.stringify(payload), // Send user's message to OpenAI API
       });
 
-      console.log(response);
       if (response.status === 200) {
         const responseData = await response.json();
         const botResponse = responseData.choices[0].text; 
