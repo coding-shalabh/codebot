@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Leftnavbar from './Leftnavbar';
 import Navbar from './Navbar';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
 const apikey = process.env.apikey;
 
@@ -11,7 +11,7 @@ const Chat = () => {
   const [userInput, setUserInput] = useState('');
   const [conversation, setConversation] = useState(messages);
   
-  dotenv.config();
+  // dotenv.config();
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
