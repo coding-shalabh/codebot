@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Leftnavbar from './Leftnavbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
 // import dotenv from 'dotenv';
 
