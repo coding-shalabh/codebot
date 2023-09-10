@@ -10,8 +10,6 @@ const Chat = () => {
   const messages = [{ id: 0, sender: 'bot', content: "How can I help you today ?", timestamp: new Date().toISOString() }]; // State to track loading status
   const [userInput, setUserInput] = useState('');
   const [conversation, setConversation] = useState(messages);
-  
-  // dotenv.config();
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
