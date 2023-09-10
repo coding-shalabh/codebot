@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
 
-const apikey = `Bearer ${process.env.OPEN_AI}`;
+const apikey = `Bearer ${process.env.REACT_APP_OPEN_AI}`;
 
 
 const Chat = () => {
@@ -45,7 +45,7 @@ You can start by asking your coding question or providing a code snippet for Cod
     };
     
     try {
-      console.log(process.env.OPEN_AI);
+      console.log(process.env.REACT_APP_OPEN_AI);
       const response = await fetch('https://api.openai.com/v1/engines/text-davinci-002/completions', {
         method: 'POST',
         headers: {
