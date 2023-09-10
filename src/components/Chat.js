@@ -3,7 +3,7 @@ import Leftnavbar from './Leftnavbar';
 import Navbar from './Navbar';
 // import dotenv from 'dotenv';
 
-const apikey = process.env.apikey;
+const apikey = process.env.OPEN_AI;
 
 
 const Chat = () => {
