@@ -23,20 +23,7 @@ const Chat = () => {
     // Make API call to OpenAI for generating a response
 
     const payload = {
-      prompt: `You are now chatting with Coding Bot, created by Shalabh Gupta.
-
-Coding Bot is here to assist you with coding questions and provide code fixes. It specializes in JavaScript, Python, and Java.
-
-Instructions:
-1. Ask coding-related questions or provide code snippets.
-2. Coding Bot will analyze your input and provide relevant code fixes or explanations.
-3. Feel free to ask follow-up questions for clarification or additional assistance.
-4. If you have a specific code snippet to fix, paste it here, and Coding Bot will help you with the corrections.
-5. Keep the conversation focused on coding-related topics.
-
-You can start by asking your coding question or providing a code snippet for Coding Bot to assist you.`
-
-        + userInput,
+      prompt: process.env.REACT_APP_PROMPT + userInput,
       max_tokens: 750,
       temperature: 0.5,
       top_p: 0.8,
