@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './Navbar';
 
 
 const Chat = () => {
@@ -74,6 +75,7 @@ You can start by asking your coding question or providing a code snippet for Cod
   return (
     <div>
       <>
+      <Navbar/>
         <div>
           <section className="message-area">
             <div className="container">
