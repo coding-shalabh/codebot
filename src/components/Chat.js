@@ -18,10 +18,26 @@ const Chat = () => {
       ...prevConversation,
       { id: conversation.length + 1, sender: 'current_user', content: userInput, timestamp: new Date().toISOString() },
     ]);
+
+
     // Make API call to OpenAI for generating a response
 
     const payload = {
-      prompt: process.env.REACT_APP_PROMPT + userInput,
+      prompt: `You are now chatting with Coding Bot, 
+      created by [Your Name]. Coding Bot is here to 
+      assist you with coding questions and provide code
+       fixes. It specializes in JavaScript, Python, and 
+       Java.\n\nInstructions:\n1. Ask coding-related 
+       questions or provide code snippets.\n2. Coding
+        Bot will analyze your input and provide
+         relevant code fixes or explanations.\n3.
+          Feel free to ask follow-up questions for 
+          clarification or additional assistance.\n4. 
+          If you have a specific code snippet to fix, 
+          paste it here, and Coding Bot will help you
+           with the corrections.\n5. Keep the conversation
+            focused on coding-related topics. If someone
+            provide you code check the code and fix it` + userInput,
       max_tokens: 750,
       temperature: 0.5,
       top_p: 0.8,
