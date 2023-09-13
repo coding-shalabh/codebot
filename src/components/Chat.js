@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
-
+import { NavLink } from 'react-router-dom';
 
 const Chat = () => {
   const messages = [{ id: 0, sender: 'bot', content: "How can I help you today ?", timestamp: new Date().toISOString() }]; // State to track loading status
   const [userInput, setUserInput] = useState('');
   const [conversation, setConversation] = useState(messages);
 
+  const linkedIn = "https://www.linkedin.com/in/shalabh-dev/"
   const handleSendMessage = async (e) => {
     e.preventDefault();
 
@@ -17,9 +18,6 @@ const Chat = () => {
       ...prevConversation,
       { id: conversation.length + 1, sender: 'current_user', content: userInput, timestamp: new Date().toISOString() },
     ]);
-
-
-
     // Make API call to OpenAI for generating a response
 
     const payload = {
@@ -36,7 +34,7 @@ const Chat = () => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${process.env.REACT_APP_OPEN_AI}`,
         },
-        body: JSON.stringify(payload), // Send user's message to OpenAI API
+        body: JSON.stringify(payload),
       });
 
       if (response.status === 200) {
@@ -103,7 +101,11 @@ const Chat = () => {
                         </div>
                       </div>
                     </div>
-                    <p>The <b>Codebot</b> is created just for trial purpose, its under training. It may provide inccurate information.</p>
+                    <p className='footerText'>The <b>Codebot</b> is created 
+                    just for trial purpose, its under training.
+                     It may provide inccurate information.
+                     <br/> 💟 made by <b><NavLink to={linkedIn} style={{color:"white",textDecoration: "none"}}>Shalabh Gupta</NavLink></b>
+                     </p>
                   </div>
                 </div>
               </div>
